@@ -1,12 +1,27 @@
 package ch17.sec10;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class AggregateExample {
 	public static void main(String[] args) {
 		//정수 배열
 		int[] arr = {1, 2, 3, 4, 5};
-
+		String[] arr2 = {"apple", "banana","aaa", "bbbbb"};
+		
+		System.out.println(arr2.length+"개");
+		
+		long result = Arrays.stream(arr2).filter(s->s.startsWith("a")).count();
+		System.out.println("a로 시작하는 data개수"+result);
+		
+		//stream은 중간단계 거치고 최종단계로 온다.
+		//중간에 중단시 결과를 볼 수 없다.
+		int result2 = Arrays.stream(arr2).mapToInt(s->s.length()).peek(aa->System.out.println(aa+"글자")).sum();
+		System.out.println("문자 길이들의 합계"+result2);
+		
+		IntStream is = Arrays.stream(arr2).mapToInt(s->s.length()).peek(aa->System.out.println(aa+"!!!!!!!!!!!!!글자"));
+		
+		
 		//카운팅
 		long count = Arrays.stream(arr)
 				.filter(n -> n%2==0)

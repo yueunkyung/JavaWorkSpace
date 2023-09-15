@@ -1,5 +1,6 @@
 package ch16.sec05.exam03;
 
+//DTO, VO
 public class Member {
 	private String id;
 	private String name;

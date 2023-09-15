@@ -14,7 +14,33 @@ public class OptionalExample {
  			.average()
  			.getAsDouble();
 		*/
-
+		
+		list.add(100);
+		OptionalDouble result1 = list.stream()
+		.mapToInt(i->i.intValue())		// 또는 .mapToInt(Integer::intValue)
+		.peek(a->System.out.println(a))
+		.average();
+		
+		//1)
+		if(result1.isPresent()) {
+			System.out.println("존재하면 묻기"+result1.getAsDouble());
+		}
+		
+		//2)
+		double result2 = result1.orElse(0);
+		System.out.println("존재하지 않으면 초기값을 춤: "+result2);
+		
+		//3)
+		result1.ifPresentOrElse(i->{
+			System.out.println("값이 있음: " + i);
+		}, ()->{
+			System.out.println("값이 없음");
+		});
+		
+		
+		
+		System.out.println("--------------------------------------------");
+		
 		//방법1
 		OptionalDouble optional = list.stream()
 			.mapToInt(Integer :: intValue)

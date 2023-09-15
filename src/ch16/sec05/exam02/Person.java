@@ -1,5 +1,6 @@
 package ch16.sec05.exam02;
 
+//Service : Business Logic
 public class Person {
 	public void ordering(Comparable comparable) {
 		String a = "홍길동";
