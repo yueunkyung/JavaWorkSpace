@@ -18,7 +18,7 @@ public class EchoServer {
 		System.out.println("서버를 종료하려면 q를 입력하고 Enter 키를 입력하세요.");
 		System.out.println("--------------------------------------------------------------------");
 		
-		//TCP 서버 시작
+		//TCP 서버 시작.....Thread이용
 		startServer();
 		
 		//키보드 입력

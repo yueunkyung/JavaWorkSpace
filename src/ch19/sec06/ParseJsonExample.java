@@ -12,7 +12,7 @@ public class ParseJsonExample {
 	public static void main(String[] args) throws IOException {
 		//파일로부터 JSON 읽기
 		BufferedReader br = new BufferedReader(
-			new FileReader("C:/Temp/member.json", Charset.forName("UTF-8"))
+			new FileReader("member.json", Charset.forName("UTF-8"))
 		);
 		String json  = br.readLine();
 		br.close();
